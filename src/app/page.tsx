@@ -33,12 +33,12 @@ export default function Home() {
         <h2 className="text-3xl font-semibold text-center mb-8">Nossos Planos</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Monthly Plan */}
-          <Card>
+          <Card className="flex flex-col">
             <CardHeader>
               <CardTitle>Mensal</CardTitle>
               <CardDescription>Flexibilidade total</CardDescription>
             </CardHeader>
-            <CardContent className="flex flex-col justify-between h-full">
+            <CardContent className="flex-grow">
               <div>
                 <div className="text-2xl font-bold">R$ 150,00</div>
                 <ul className="list-disc pl-5 mt-4 text-muted-foreground">
@@ -46,17 +46,17 @@ export default function Home() {
                   <li>Treino livre</li>
                 </ul>
               </div>
-              <Button className="mt-4 w-full">Escolher Mensal</Button>
             </CardContent>
+            <Button className="mt-4">Escolher Mensal</Button>
           </Card>
 
           {/* Quarterly Plan */}
-          <Card>
+           <Card className="flex flex-col">
             <CardHeader>
               <CardTitle>Trimestral</CardTitle>
               <CardDescription>Economia e compromisso</CardDescription>
             </CardHeader>
-            <CardContent className="flex flex-col justify-between h-full">
+            <CardContent className="flex-grow">
               <div>
                 <div className="text-2xl font-bold">R$ 400,00</div>
                 <ul className="list-disc pl-5 mt-4 text-muted-foreground">
@@ -64,17 +64,17 @@ export default function Home() {
                   <li>Desconto especial</li>
                 </ul>
               </div>
-              <Button className="mt-4 w-full">Escolher Trimestral</Button>
             </CardContent>
+             <Button className="mt-4">Escolher Trimestral</Button>
           </Card>
 
           {/* Annual Plan */}
-          <Card>
+          <Card className="flex flex-col">
             <CardHeader>
               <CardTitle>Anual</CardTitle>
               <CardDescription>Máximo desempenho e economia</CardDescription>
             </CardHeader>
-            <CardContent className="flex flex-col justify-between h-full">
+            <CardContent className="flex-grow">
               <div>
                 <div className="text-2xl font-bold">R$ 1.200,00</div>
                 <ul className="list-disc pl-5 mt-4 text-muted-foreground">
@@ -82,8 +82,8 @@ export default function Home() {
                   <li>Acesso a eventos exclusivos</li>
                 </ul>
               </div>
-              <Button className="mt-4 w-full">Escolher Anual</Button>
             </CardContent>
+             <Button className="mt-4">Escolher Anual</Button>
           </Card>
         </div>
       </section>
@@ -175,6 +175,26 @@ export default function Home() {
             <CardContent>
               <p className="text-muted-foreground italic">
                 Nunca desista, a faixa preta é só o começo.
+              </p>
+            </CardContent>
+          </Card>
+             <Card>
+            <CardHeader>
+              <CardTitle>A técnica aprimora.</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground italic">
+                O treino constante te leva à perfeição.
+              </p>
+            </CardContent>
+          </Card>
+             <Card>
+            <CardHeader>
+              <CardTitle>Humildade acima de tudo.</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground italic">
+                Aprenda com todos, ensine com o exemplo.
               </p>
             </CardContent>
           </Card>
