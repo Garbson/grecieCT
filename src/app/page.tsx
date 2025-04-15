@@ -38,12 +38,14 @@ export default function Home() {
               <CardTitle>Mensal</CardTitle>
               <CardDescription>Flexibilidade total</CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">R$ 150,00</div>
-              <ul className="list-disc pl-5 mt-4 text-muted-foreground">
-                <li>Acesso ilimitado às aulas</li>
-                <li>Treino livre</li>
-              </ul>
+            <CardContent className="flex flex-col justify-between h-full">
+              <div>
+                <div className="text-2xl font-bold">R$ 150,00</div>
+                <ul className="list-disc pl-5 mt-4 text-muted-foreground">
+                  <li>Acesso ilimitado às aulas</li>
+                  <li>Treino livre</li>
+                </ul>
+              </div>
               <Button className="mt-4 w-full">Escolher Mensal</Button>
             </CardContent>
           </Card>
@@ -54,12 +56,14 @@ export default function Home() {
               <CardTitle>Trimestral</CardTitle>
               <CardDescription>Economia e compromisso</CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">R$ 400,00</div>
-              <ul className="list-disc pl-5 mt-4 text-muted-foreground">
-                <li>Todos os benefícios do plano mensal</li>
-                <li>Desconto especial</li>
-              </ul>
+            <CardContent className="flex flex-col justify-between h-full">
+              <div>
+                <div className="text-2xl font-bold">R$ 400,00</div>
+                <ul className="list-disc pl-5 mt-4 text-muted-foreground">
+                  <li>Todos os benefícios do plano mensal</li>
+                  <li>Desconto especial</li>
+                </ul>
+              </div>
               <Button className="mt-4 w-full">Escolher Trimestral</Button>
             </CardContent>
           </Card>
@@ -70,13 +74,14 @@ export default function Home() {
               <CardTitle>Anual</CardTitle>
               <CardDescription>Máximo desempenho e economia</CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">R$ 1.200,00</div>
-              <ul className="list-disc pl-5 mt-4 text-muted-foreground">
-                <li>Todos os benefícios dos planos anteriores</li>
-                <li>Acesso a eventos exclusivos</li>
-
-              </ul>
+            <CardContent className="flex flex-col justify-between h-full">
+              <div>
+                <div className="text-2xl font-bold">R$ 1.200,00</div>
+                <ul className="list-disc pl-5 mt-4 text-muted-foreground">
+                  <li>Todos os benefícios dos planos anteriores</li>
+                  <li>Acesso a eventos exclusivos</li>
+                </ul>
+              </div>
               <Button className="mt-4 w-full">Escolher Anual</Button>
             </CardContent>
           </Card>
@@ -150,6 +155,26 @@ export default function Home() {
             <CardContent>
               <p className="text-muted-foreground italic">
                 A vitória é consequência.
+              </p>
+            </CardContent>
+          </Card>
+            <Card>
+            <CardHeader>
+              <CardTitle>Mente sã, corpo são.</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground italic">
+                A disciplina no tatame reflete na vida.
+              </p>
+            </CardContent>
+          </Card>
+             <Card>
+            <CardHeader>
+              <CardTitle>A persistência conquista.</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground italic">
+                Nunca desista, a faixa preta é só o começo.
               </p>
             </CardContent>
           </Card>
