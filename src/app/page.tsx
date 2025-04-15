@@ -47,7 +47,9 @@ export default function Home() {
                 </ul>
               </div>
             </CardContent>
-            <Button className="mt-4">Escolher Mensal</Button>
+            <div className="p-6 pt-0">
+               <Button className="w-full">Escolher Mensal</Button>
+            </div>
           </Card>
 
           {/* Quarterly Plan */}
@@ -65,7 +67,9 @@ export default function Home() {
                 </ul>
               </div>
             </CardContent>
-             <Button className="mt-4">Escolher Trimestral</Button>
+             <div className="p-6 pt-0">
+                <Button className="w-full">Escolher Trimestral</Button>
+             </div>
           </Card>
 
           {/* Annual Plan */}
@@ -83,10 +87,79 @@ export default function Home() {
                 </ul>
               </div>
             </CardContent>
-             <Button className="mt-4">Escolher Anual</Button>
+             <div className="p-6 pt-0">
+                <Button className="w-full">Escolher Anual</Button>
+             </div>
           </Card>
         </div>
       </section>
+
+        {/* Benefícios do Jiu-Jitsu */}
+        <section className="mb-16">
+            <h2 className="text-3xl font-semibold text-center mb-8">Benefícios do Jiu-Jitsu</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Defesa Pessoal</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground">
+                            Aprenda técnicas eficazes para se proteger em situações de perigo.
+                        </p>
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Condicionamento Físico</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground">
+                            Melhore sua força, resistência, flexibilidade e coordenação.
+                        </p>
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Alívio do Stress</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground">
+                            Libere a tensão e o stress do dia a dia através do treino.
+                        </p>
+                    </CardContent>
+                </Card>
+                 <Card>
+                    <CardHeader>
+                        <CardTitle>Disciplina e Foco</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground">
+                           Desenvolva a disciplina, a concentração e a perseverança.
+                        </p>
+                    </CardContent>
+                </Card>
+                 <Card>
+                    <CardHeader>
+                        <CardTitle>Confiança</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground">
+                           Aumente a sua autoconfiança e a sua autoestima.
+                        </p>
+                    </CardContent>
+                </Card>
+                 <Card>
+                    <CardHeader>
+                        <CardTitle>Comunidade</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground">
+                           Faça novos amigos e encontre uma comunidade de apoio.
+                        </p>
+                    </CardContent>
+                </Card>
+            </div>
+        </section>
 
       {/* Training Center Location */}
       <section className="mb-16">
