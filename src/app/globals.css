@@ -106,3 +106,37 @@ body {
   }
 }
 
+@layer utilities {
+  .animate-gradientFlow {
+    animation: gradientFlow 3s ease infinite;
+  }
+
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .animate-counter {
+    animation: counter-animation 2s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes counter-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
