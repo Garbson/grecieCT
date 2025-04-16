@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export function StartTodaySection() {
   return (
-    <section className="mb-16 py-16 bg-red-900 relative overflow-hidden">
+    <section className="mb-16 p-4 py-16 sm:px-8 md:p-16 bg-red-900 relative overflow-hidden rounded-lg">
       {/* Elementos decorativos de fundo */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-white/20"></div>
@@ -23,21 +23,21 @@ export function StartTodaySection() {
             Fale com um Instrutor
           </Button>
         </div>
-        <div className="mt-8 flex items-center justify-center gap-6">
-          <div className="flex items-center">
-            <svg className="w-6 h-6 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <div className="mt-8 hidden md:flex md:flex-row md:items-center md:justify-center md:gap-6 mx-auto md:max-w-2xl">
+          <div className="flex items-center justify-start">
+            <svg className="w-6 h-6 text-white mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span className="text-white">Sem Compromisso</span>
           </div>
-          <div className="flex items-center">
-            <svg className="w-6 h-6 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <div className="flex items-center justify-start">
+            <svg className="w-6 h-6 text-white mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span className="text-white">Kimono Emprestado</span>
           </div>
-          <div className="flex items-center">
-            <svg className="w-6 h-6 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <div className="flex items-center justify-start">
+            <svg className="w-6 h-6 text-white mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span className="text-white">Instrutores Qualificados</span>

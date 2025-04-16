@@ -4,7 +4,7 @@ export function HistorySection() {
       <h2 className="text-3xl font-semibold text-center mb-8">Nossa História</h2>
       <div className="text-lg text-muted-foreground">
         <p className="mb-4">
-          Fundado em 2005 pelo Mestre João Silva, o CT Clube da Luta nasceu do desejo de criar um espaço
+          Fundado em 2025 pelo Mestre Diego Santos, o CT Clube da Luta nasceu do desejo de criar um espaço
           onde a disciplina e o respeito fossem tão importantes quanto a técnica.
         </p>
         <p className="mb-4">

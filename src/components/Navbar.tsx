@@ -25,7 +25,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-white">GRECIE CT</span>
+            <span className="text-2xl font-bold text-white">Clube da Luta CT</span>
           </Link>
 
           {/* Menu para desktop */}

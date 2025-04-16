@@ -1,6 +1,10 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export function ClassScheduleSection() {
+  const isMobile = useIsMobile();
+
   const weekdays = [
     {
       day: "Segunda",
@@ -67,33 +71,61 @@ export function ClassScheduleSection() {
     <section id="schedule" className="mb-16">
       <h2 className="text-3xl font-semibold text-center mb-8">Horários das Aulas</h2>
       <Tabs defaultValue="Segunda" className="max-w-4xl mx-auto">
-        <TabsList className="grid grid-cols-7 mb-6">
-          {weekdays.map((day) => (
-            <TabsTrigger key={day.day} value={day.day}>{day.day}</TabsTrigger>
-          ))}
-        </TabsList>
+        {isMobile ? (
+          <ScrollArea className="w-full pb-4">
+            <TabsList className="inline-flex mb-6 w-auto">
+              {weekdays.map((day) => (
+                <TabsTrigger key={day.day} value={day.day} className="px-4">{day.day}</TabsTrigger>
+              ))}
+            </TabsList>
+          </ScrollArea>
+        ) : (
+          <TabsList className="grid grid-cols-7 mb-6">
+            {weekdays.map((day) => (
+              <TabsTrigger key={day.day} value={day.day}>{day.day}</TabsTrigger>
+            ))}
+          </TabsList>
+        )}
+        
         {weekdays.map((day) => (
           <TabsContent key={day.day} value={day.day}>
-            <div className="border rounded-lg overflow-hidden">
-              <table className="w-full">
-                <thead className="bg-secondary">
-                  <tr>
-                    <th className="px-4 py-3 text-left">Horário</th>
-                    <th className="px-4 py-3 text-left">Aula</th>
-                    <th className="px-4 py-3 text-left">Nível</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {day.classes.map((classItem, idx) => (
-                    <tr key={idx} className={idx % 2 === 0 ? "bg-secondary/30" : ""}>
-                      <td className="px-4 py-3 font-medium">{classItem.time}</td>
-                      <td className="px-4 py-3">{classItem.name}</td>
-                      <td className="px-4 py-3 text-muted-foreground">{classItem.level}</td>
+            {isMobile ? (
+              <div className="border rounded-lg overflow-hidden">
+                {day.classes.map((classItem, idx) => (
+                  <div 
+                    key={idx} 
+                    className={`p-4 ${idx % 2 === 0 ? "bg-secondary/30" : ""}`}
+                  >
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="font-medium">{classItem.time}</span>
+                      <span className="text-sm text-muted-foreground">{classItem.level}</span>
+                    </div>
+                    <div className="font-medium">{classItem.name}</div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="border rounded-lg overflow-hidden">
+                <table className="w-full">
+                  <thead className="bg-secondary">
+                    <tr>
+                      <th className="px-4 py-3 text-left">Horário</th>
+                      <th className="px-4 py-3 text-left">Aula</th>
+                      <th className="px-4 py-3 text-left">Nível</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody>
+                    {day.classes.map((classItem, idx) => (
+                      <tr key={idx} className={idx % 2 === 0 ? "bg-secondary/30" : ""}>
+                        <td className="px-4 py-3 font-medium">{classItem.time}</td>
+                        <td className="px-4 py-3">{classItem.name}</td>
+                        <td className="px-4 py-3 text-muted-foreground">{classItem.level}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </TabsContent>
         ))}
       </Tabs>

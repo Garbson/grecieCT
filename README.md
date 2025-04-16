@@ -101,4 +101,4 @@ Desenvolvido por [Garbson Souza](https://wa.me/5511999999999)
 
 ---
 
-2025 © Grecie Centro de Treinamento - Todos os direitos reservados.
+2025 © Clube da Luta Centro de Treinamento - Todos os direitos reservados.
