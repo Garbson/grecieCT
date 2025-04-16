@@ -1,9 +1,17 @@
-import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useState } from "react";
 
 export function ClassScheduleSection() {
   const isMobile = useIsMobile();
+  const [selectedDay, setSelectedDay] = useState("Segunda");
 
   const weekdays = [
     {
@@ -67,44 +75,56 @@ export function ClassScheduleSection() {
     },
   ];
 
+  const selectedDayData = weekdays.find(day => day.day === selectedDay);
+
   return (
     <section id="schedule" className="mb-16">
       <h2 className="text-3xl font-semibold text-center mb-8">Horários das Aulas</h2>
-      <Tabs defaultValue="Segunda" className="max-w-4xl mx-auto">
-        {isMobile ? (
-          <ScrollArea className="w-full pb-4">
-            <TabsList className="inline-flex mb-6 w-auto">
-              {weekdays.map((day) => (
-                <TabsTrigger key={day.day} value={day.day} className="px-4">{day.day}</TabsTrigger>
+      
+      {isMobile ? (
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="mb-6">
+            <Select value={selectedDay} onValueChange={setSelectedDay}>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Selecione o dia" />
+              </SelectTrigger>
+              <SelectContent>
+                {weekdays.map((day) => (
+                  <SelectItem key={day.day} value={day.day}>
+                    {day.day}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {selectedDayData && (
+            <div className="border rounded-lg overflow-hidden">
+              {selectedDayData.classes.map((classItem, idx) => (
+                <div 
+                  key={idx} 
+                  className={`p-4 ${idx % 2 === 0 ? "bg-secondary/30" : ""} border-b last:border-b-0`}
+                >
+                  <div className="flex justify-between items-center mb-1">
+                    <span className="font-medium">{classItem.time}</span>
+                    <span className="text-sm text-muted-foreground">{classItem.level}</span>
+                  </div>
+                  <div className="font-medium">{classItem.name}</div>
+                </div>
               ))}
-            </TabsList>
-          </ScrollArea>
-        ) : (
+            </div>
+          )}
+        </div>
+      ) : (
+        <Tabs defaultValue="Segunda" className="max-w-4xl mx-auto">
           <TabsList className="grid grid-cols-7 mb-6">
             {weekdays.map((day) => (
               <TabsTrigger key={day.day} value={day.day}>{day.day}</TabsTrigger>
             ))}
           </TabsList>
-        )}
-        
-        {weekdays.map((day) => (
-          <TabsContent key={day.day} value={day.day}>
-            {isMobile ? (
-              <div className="border rounded-lg overflow-hidden">
-                {day.classes.map((classItem, idx) => (
-                  <div 
-                    key={idx} 
-                    className={`p-4 ${idx % 2 === 0 ? "bg-secondary/30" : ""}`}
-                  >
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="font-medium">{classItem.time}</span>
-                      <span className="text-sm text-muted-foreground">{classItem.level}</span>
-                    </div>
-                    <div className="font-medium">{classItem.name}</div>
-                  </div>
-                ))}
-              </div>
-            ) : (
+          
+          {weekdays.map((day) => (
+            <TabsContent key={day.day} value={day.day}>
               <div className="border rounded-lg overflow-hidden">
                 <table className="w-full">
                   <thead className="bg-secondary">
@@ -125,10 +145,11 @@ export function ClassScheduleSection() {
                   </tbody>
                 </table>
               </div>
-            )}
-          </TabsContent>
-        ))}
-      </Tabs>
+            </TabsContent>
+          ))}
+        </Tabs>
+      )}
+      
       <div className="text-center mt-6 text-muted-foreground">
         <p>* As aulas têm duração de 1 hora</p>
         <p>* Chegue 15 minutos antes para se preparar</p>
