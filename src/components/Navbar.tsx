@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -22,10 +23,20 @@ export function Navbar() {
       "before:bg-[length:200%_100%] before:animate-gradientFlow"
     )}>
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-white">Clube da Luta CT</span>
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/favicon.ico"
+              alt="Logo Complexo do Alemão"
+              width={52}
+              height={52}
+              className="rounded-full border-2 border-white/30"
+            />
+            <span className="text-2xl font-bold text-white leading-tight">
+              Complexo<br />
+              <span className="text-red-200 text-lg font-semibold">do Alemão</span>
+            </span>
           </Link>
 
           {/* Menu para desktop */}

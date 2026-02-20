@@ -2,12 +2,11 @@
 
 import {
   BenefitsSection,
-  BlogSection,
   ClassScheduleSection,
   FAQSection,
+  GallerySection,
   HeroSection,
   HistorySection,
-  LocationSection,
   PricingSection,
   ProgressionSection,
   QuotesSection,
@@ -22,13 +21,14 @@ export default function Home() {
   useEffect(() => {
     toast({
       title: "Bem-vindo!",
-      description: "Explore nossos planos e junte-se à família Clube da Luta.",
+      description: "Explore nossos planos e junte-se à família Complexo do Alemão.",
     });
   }, []);
 
   return (
     <div className="container mx-auto py-12 px-5">
       <HeroSection />
+      <HistorySection />
       <StatsSection />
       <BenefitsSection />
       <TestimonialVideoSection />
@@ -36,11 +36,9 @@ export default function Home() {
       <StartTodaySection />
       <PricingSection />
       <ClassScheduleSection />
-      <BlogSection />
-      <FAQSection />
-      <LocationSection />
-      <HistorySection />
+      <GallerySection />
       <QuotesSection />
+      <FAQSection />
     </div>
   );
 }

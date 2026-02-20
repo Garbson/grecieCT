@@ -1,4 +1,8 @@
-import { Button } from "@/components/ui/button";
+const WHATSAPP_EXPERIMENTAL =
+  "https://wa.me/5569993030072?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20gratuita.";
+
+const WHATSAPP_INSTRUTOR =
+  "https://wa.me/5569993030072?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20instrutor.";
 
 export function StartTodaySection() {
   return (
@@ -8,20 +12,30 @@ export function StartTodaySection() {
         <div className="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-white/20"></div>
         <div className="absolute -left-24 -bottom-24 w-80 h-80 rounded-full bg-white/20"></div>
       </div>
-      
+
       <div className="container mx-auto text-center relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Comece Sua Jornada Hoje</h2>
         <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
-          Agende sua primeira aula experimental gratuita e descubra por que o Jiu-Jitsu 
+          Agende sua primeira aula experimental gratuita e descubra por que o Jiu-Jitsu
           pode transformar sua vida.
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-white text-red-900 hover:bg-white/90 text-lg px-8">
+          <a
+            href={WHATSAPP_EXPERIMENTAL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center bg-white text-red-900 hover:bg-white/90 font-semibold text-lg px-8 py-3 rounded-md transition-all hover:scale-105"
+          >
             Aula Experimental Grátis
-          </Button>
-          <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 text-lg px-8">
+          </a>
+          <a
+            href={WHATSAPP_INSTRUTOR}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center border border-white text-white hover:bg-white/10 font-semibold text-lg px-8 py-3 rounded-md transition-all hover:scale-105"
+          >
             Fale com um Instrutor
-          </Button>
+          </a>
         </div>
         <div className="mt-8 hidden md:flex md:flex-row md:items-center md:justify-center md:gap-6 mx-auto md:max-w-2xl">
           <div className="flex items-center justify-start">

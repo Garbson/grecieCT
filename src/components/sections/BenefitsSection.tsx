@@ -5,11 +5,13 @@ export function BenefitsSection() {
   const benefits = [
     {
       title: "Defesa Pessoal",
-      description: "Aprenda técnicas eficazes para se proteger em situações de perigo.",
+      description:
+        "Aprenda técnicas eficazes para se proteger em situações de perigo.",
     },
     {
       title: "Condicionamento Físico",
-      description: "Melhore sua força, resistência, flexibilidade e coordenação.",
+      description:
+        "Melhore sua força, resistência, flexibilidade e coordenação.",
     },
     {
       title: "Alívio do Stress",
@@ -31,16 +33,18 @@ export function BenefitsSection() {
 
   return (
     <section id="benefits" className="mb-16">
-      <h2 className="text-3xl font-semibold text-center mb-8">Benefícios do Jiu-Jitsu</h2>
+      <h2 className="text-3xl font-semibold text-center mb-8">
+        Benefícios do Jiu-Jitsu
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {benefits.map((benefit, index) => (
-          <Card 
-            key={index} 
+          <Card
+            key={index}
             className={cn(
               "relative overflow-hidden border-none",
               "before:absolute before:inset-0 before:z-0",
               "before:bg-gradient-to-r before:from-red-800/80 before:via-red-600/80 before:to-red-800/80",
-              "before:bg-[length:200%_100%] before:animate-gradientFlow"
+              "before:bg-[length:200%_100%] before:animate-gradientFlow",
             )}
           >
             <CardHeader className="relative z-10 text-white">

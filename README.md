@@ -1,10 +1,10 @@
-# Grecie Centro de Treinamento - Site Institucional
+# Complexo do Alemão - Site Institucional
 
-![Banner Grecie CT](https://via.placeholder.com/1200x300/red/white?text=Grecie+Centro+de+Treinamento)
+![Banner Complexo do Alemão](https://via.placeholder.com/1200x300/red/white?text=Complexo+do+Alemão)
 
 ## 📋 Sobre o Projeto
 
-Este é um site institucional desenvolvido para o Grecie Centro de Treinamento, uma academia especializada em Jiu-Jitsu. O site foi construído utilizando tecnologias modernas como Next.js, TypeScript e Tailwind CSS, proporcionando uma experiência de usuário fluida e responsiva.
+Este é um site institucional desenvolvido para o Complexo do Alemão, uma academia especializada em Jiu-Jitsu. O site foi construído utilizando tecnologias modernas como Next.js, TypeScript e Tailwind CSS, proporcionando uma experiência de usuário fluida e responsiva.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -101,4 +101,4 @@ Desenvolvido por [Garbson Souza](https://wa.me/5511999999999)
 
 ---
 
-2025 © Clube da Luta Centro de Treinamento - Todos os direitos reservados.
+2025 © Complexo do Alemão - Todos os direitos reservados.

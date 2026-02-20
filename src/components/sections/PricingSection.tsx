@@ -1,7 +1,33 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState } from "react";
+
+async function handleCheckout(planId: string, setLoading: (id: string | null) => void) {
+  setLoading(planId);
+  try {
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ planId }),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      alert(data.error ?? "Erro ao iniciar pagamento. Tente novamente.");
+      return;
+    }
+    if (data.url) window.location.href = data.url;
+  } catch {
+    alert("Erro de conexão. Verifique sua internet e tente novamente.");
+  } finally {
+    setLoading(null);
+  }
+}
 
 export function PricingSection() {
+  const [loading, setLoading] = useState<string | null>(null);
+
   return (
     <section id="pricing" className="mb-16">
       <h2 className="text-3xl font-semibold text-center mb-8">Nossos Planos</h2>
@@ -22,7 +48,13 @@ export function PricingSection() {
             </div>
           </CardContent>
           <div className="p-6 pt-0">
-            <Button className="w-full">Escolher Mensal</Button>
+            <Button
+              className="w-full"
+              disabled={loading === "mensal"}
+              onClick={() => handleCheckout("mensal", setLoading)}
+            >
+              {loading === "mensal" ? "Aguarde..." : "Assinar Mensal"}
+            </Button>
           </div>
         </Card>
 
@@ -42,7 +74,13 @@ export function PricingSection() {
             </div>
           </CardContent>
           <div className="p-6 pt-0">
-            <Button className="w-full">Escolher Trimestral</Button>
+            <Button
+              className="w-full"
+              disabled={loading === "trimestral"}
+              onClick={() => handleCheckout("trimestral", setLoading)}
+            >
+              {loading === "trimestral" ? "Aguarde..." : "Assinar Trimestral"}
+            </Button>
           </div>
         </Card>
 
@@ -62,10 +100,16 @@ export function PricingSection() {
             </div>
           </CardContent>
           <div className="p-6 pt-0">
-            <Button className="w-full">Escolher Anual</Button>
+            <Button
+              className="w-full"
+              disabled={loading === "anual"}
+              onClick={() => handleCheckout("anual", setLoading)}
+            >
+              {loading === "anual" ? "Aguarde..." : "Assinar Anual"}
+            </Button>
           </div>
         </Card>
-        
+
         {/* Adulto + Kids Plan */}
         <Card className="flex flex-col">
           <CardHeader>
@@ -84,10 +128,16 @@ export function PricingSection() {
             </div>
           </CardContent>
           <div className="p-6 pt-0">
-            <Button className="w-full">Escolher Família</Button>
+            <Button
+              className="w-full"
+              disabled={loading === "adulto_kids_mensal"}
+              onClick={() => handleCheckout("adulto_kids_mensal", setLoading)}
+            >
+              {loading === "adulto_kids_mensal" ? "Aguarde..." : "Assinar Família"}
+            </Button>
           </div>
         </Card>
-        
+
         {/* Adulto + Kids Annual Plan */}
         <Card className="flex flex-col">
           <CardHeader>
@@ -106,10 +156,16 @@ export function PricingSection() {
             </div>
           </CardContent>
           <div className="p-6 pt-0">
-            <Button className="w-full">Escolher Anual Família</Button>
+            <Button
+              className="w-full"
+              disabled={loading === "adulto_kids_anual"}
+              onClick={() => handleCheckout("adulto_kids_anual", setLoading)}
+            >
+              {loading === "adulto_kids_anual" ? "Aguarde..." : "Assinar Família Anual"}
+            </Button>
           </div>
         </Card>
-        
+
         {/* Couple Plan */}
         <Card className="flex flex-col">
           <CardHeader>
@@ -128,7 +184,13 @@ export function PricingSection() {
             </div>
           </CardContent>
           <div className="p-6 pt-0">
-            <Button className="w-full">Escolher Plano Casal</Button>
+            <Button
+              className="w-full"
+              disabled={loading === "casal"}
+              onClick={() => handleCheckout("casal", setLoading)}
+            >
+              {loading === "casal" ? "Aguarde..." : "Assinar Casal"}
+            </Button>
           </div>
         </Card>
       </div>

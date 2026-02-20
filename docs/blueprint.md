@@ -1,4 +1,4 @@
-# **App Name**: Clube da Luta
+# **App Name**: Complexo do Alemão
 
 ## Core Features:
 
