@@ -3,7 +3,16 @@
     "allow": [
       "Bash(npm run dev:*)",
       "Bash(lsof:*)",
-      "Bash(xargs kill:*)"
+      "Bash(xargs kill:*)",
+      "WebFetch(domain:jhnoticias.com.br)",
+      "WebFetch(domain:rondonia.ro.gov.br)",
+      "Bash(npm run build)",
+      "Bash(cat /Users/garbsonsouzasantos/grecieCT/docs/*.md)",
+      "WebFetch(domain:oestadoderondonia.com.br)",
+      "WebFetch(domain:opennext.js.org)",
+      "Bash(npx wrangler --version)",
+      "Bash(python3 -c \":*)",
+      "Bash(npx @opennextjs/cloudflare build)"
     ]
   }
 }

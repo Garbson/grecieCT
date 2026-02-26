@@ -7,6 +7,7 @@ import {
   GallerySection,
   HeroSection,
   HistorySection,
+  NewsSection,
   PricingSection,
   ProgressionSection,
   QuotesSection,
@@ -29,6 +30,7 @@ export default function Home() {
     <div className="container mx-auto py-12 px-5">
       <HeroSection />
       <HistorySection />
+      <NewsSection />
       <StatsSection />
       <BenefitsSection />
       <TestimonialVideoSection />

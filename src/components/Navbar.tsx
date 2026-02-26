@@ -47,6 +47,9 @@ export function Navbar() {
             <Link href="#benefits" className="font-medium text-white/80 hover:text-white transition-colors">
               Benefícios
             </Link>
+            <Link href="#noticias" className="font-medium text-white/80 hover:text-white transition-colors">
+              Notícias
+            </Link>
             <Link href="#schedule" className="font-medium text-white/80 hover:text-white transition-colors">
               Horários
             </Link>
@@ -93,6 +96,9 @@ export function Navbar() {
             </Link>
             <Link href="#benefits" onClick={toggleMenu} className="font-medium text-white/80 hover:text-white transition-colors">
               Benefícios
+            </Link>
+            <Link href="#noticias" onClick={toggleMenu} className="font-medium text-white/80 hover:text-white transition-colors">
+              Notícias
             </Link>
             <Link href="#schedule" onClick={toggleMenu} className="font-medium text-white/80 hover:text-white transition-colors">
               Horários

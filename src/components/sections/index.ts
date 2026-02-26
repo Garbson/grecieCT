@@ -1,4 +1,5 @@
 export * from "./BenefitsSection";
+export * from "./NewsSection";
 export * from "./GallerySection";
 export * from "./ClassScheduleSection";
 export * from "./FAQSection";

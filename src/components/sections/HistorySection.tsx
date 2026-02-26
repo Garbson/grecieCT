@@ -23,9 +23,18 @@ export function HistorySection() {
 
         <div className="text-lg text-muted-foreground space-y-4">
           <p>
-            Fundado em 2025 pelo Mestre Diego Santos, o Complexo do Alemão
-            nasceu do desejo de criar um espaço onde a disciplina e o respeito
-            fossem tão importantes quanto a técnica.
+            O Complexo do Alemão é liderado pelo Mestre Allon Rohde, conhecido
+            no mundo do Jiu-Jitsu como "O Alemão" — o maior medalhista de
+            Rondônia na modalidade. Uma trajetória construída com dedicação,
+            suor e inúmeros títulos nos principais campeonatos nacionais e
+            internacionais.
+          </p>
+          <p>
+            Faixa-preta com histórico de conquistas em campeonatos como o
+            Europeu da IBJJF em Lisboa, o Campeonato Brasileiro e o
+            Pan-Americano, Allon Rohde representa Rondônia com orgulho nas
+            competições ao redor do mundo, sendo apoiado pelo programa
+            governamental Pró-Atleta.
           </p>
           <p>
             Nossa filosofia de treinamento vai além do tatame. Acreditamos que o
@@ -38,8 +47,8 @@ export function HistorySection() {
             formamos apenas lutadores, formamos campeões na vida.
           </p>
           <p>
-            Com anos de experiência no tatame e uma trajetória marcada por
-            conquistas dentro e fora das competições, o Mestre Alemão construiu
+            Com uma trajetória marcada por medalhas de ouro, prata e bronze nos
+            maiores eventos do Jiu-Jitsu mundial, o Mestre Allon Rohde construiu
             um método de ensino que une técnica apurada, disciplina mental e
             respeito mútuo — pilares que guiam cada aula no Complexo do Alemão.
           </p>
