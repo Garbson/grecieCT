@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
 export const dynamic = "force-dynamic";
+export const runtime = "edge";
 
 const plans: Record<string, { name: string; amount: number; description: string }> = {
   mensal: {
