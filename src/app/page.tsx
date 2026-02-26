@@ -12,7 +12,6 @@ import {
   ProgressionSection,
   QuotesSection,
   StartTodaySection,
-  StatsSection,
   TestimonialVideoSection
 } from "@/components/sections";
 import { toast } from "@/hooks/use-toast";
@@ -31,7 +30,6 @@ export default function Home() {
       <HeroSection />
       <HistorySection />
       <NewsSection />
-      <StatsSection />
       <BenefitsSection />
       <TestimonialVideoSection />
       <ProgressionSection />

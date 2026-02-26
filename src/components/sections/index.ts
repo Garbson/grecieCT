@@ -9,6 +9,6 @@ export * from "./PricingSection";
 export * from "./ProgressionSection";
 export * from "./QuotesSection";
 export * from "./StartTodaySection";
-export * from "./StatsSection";
+
 export * from "./TestimonialVideoSection";
 

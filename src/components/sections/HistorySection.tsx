@@ -8,11 +8,11 @@ export function HistorySection() {
       {/* Foto do Mestre + Texto */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-top mb-12">
         <div className="flex flex-col items-center">
-          <div className="relative w-[400px] mx-auto">
+          <div className="relative w-full max-w-[400px] mx-auto">
             <img
               src="/images/mestre/mestreAlemao.png"
               alt="Mestre Alemão"
-              className="w-full h-[520px] object-cover rounded-2xl shadow-lg border border-border"
+              className="w-full h-[340px] md:h-[520px] object-cover rounded-2xl shadow-lg border border-border"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent rounded-b-2xl p-4">
               <p className="text-white font-bold text-lg">Mestre Alemão</p>
@@ -21,7 +21,7 @@ export function HistorySection() {
           </div>
         </div>
 
-        <div className="text-lg text-muted-foreground space-y-4">
+        <div className="text-base md:text-lg text-muted-foreground space-y-4">
           <p>
             O Complexo do Alemão é liderado pelo Mestre Allon Rohde, conhecido
             no mundo do Jiu-Jitsu como "O Alemão" — o maior medalhista de

@@ -1,4 +1,7 @@
-import { ExternalLink, Newspaper } from "lucide-react";
+"use client";
+
+import { ChevronDown, ChevronUp, ExternalLink, Newspaper } from "lucide-react";
+import { useState } from "react";
 
 interface NewsArticle {
   source: string;
@@ -69,67 +72,105 @@ const articles: NewsArticle[] = [
   },
 ];
 
+const MOBILE_INITIAL_COUNT = 3;
+
+function ArticleCard({ article }: { article: NewsArticle }) {
+  return (
+    <a
+      href={article.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`group flex flex-col rounded-2xl border border-border bg-card p-4 md:p-5 shadow-sm active:scale-[0.98] hover:shadow-lg hover:border-red-600/60 transition-all duration-300 ${
+        article.highlight ? "border-red-600/40 bg-red-950/10" : ""
+      }`}
+    >
+      {/* Header */}
+      <div className="flex items-start justify-between gap-2 mb-3">
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="inline-flex items-center gap-1 text-xs font-semibold text-red-500 bg-red-500/10 border border-red-500/20 rounded-full px-3 py-1">
+            <Newspaper className="w-3 h-3 flex-shrink-0" />
+            {article.source}
+          </span>
+          {article.highlight && (
+            <span className="text-xs font-bold text-yellow-500 bg-yellow-500/10 border border-yellow-500/20 rounded-full px-2 py-1">
+              Destaque
+            </span>
+          )}
+        </div>
+        <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-red-500 transition-colors flex-shrink-0 mt-0.5" />
+      </div>
+
+      {/* Title */}
+      <h3 className="font-bold text-foreground text-sm leading-snug mb-3 group-hover:text-red-400 transition-colors line-clamp-3">
+        {article.title}
+      </h3>
+
+      {/* Description */}
+      <p className="text-muted-foreground text-xs leading-relaxed flex-1 line-clamp-3">
+        {article.description}
+      </p>
+
+      {/* Footer */}
+      <div className="mt-4 pt-3 border-t border-border flex items-center justify-between">
+        <span className="text-xs text-muted-foreground">{article.date}</span>
+        <span className="text-xs font-medium text-red-500 group-hover:underline">
+          Ler reportagem →
+        </span>
+      </div>
+    </a>
+  );
+}
+
 export function NewsSection() {
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleOnMobile = showAll ? articles : articles.slice(0, MOBILE_INITIAL_COUNT);
+  const remaining = articles.length - MOBILE_INITIAL_COUNT;
+
   return (
     <section id="noticias" className="mb-16">
-      <div className="flex items-center justify-center gap-3 mb-10">
-        <Newspaper className="w-8 h-8 text-red-600" />
-        <h2 className="text-3xl font-semibold text-center">
+      {/* Header */}
+      <div className="flex items-center justify-center gap-3 mb-6 md:mb-10">
+        <Newspaper className="w-7 h-7 md:w-8 md:h-8 text-red-600" />
+        <h2 className="text-2xl md:text-3xl font-semibold text-center">
           Mestre Allon Rohde na Mídia
         </h2>
       </div>
 
-      <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto text-lg">
+      <p className="text-center text-muted-foreground mb-8 md:mb-10 max-w-2xl mx-auto text-base md:text-lg px-2">
         Acompanhe as reportagens e coberturas sobre o Mestre Allon Rohde, o
-        "Alemão", maior medalhista de Rondônia no Jiu-Jitsu e orgulho do nosso
+        &quot;Alemão&quot;, maior medalhista de Rondônia no Jiu-Jitsu e orgulho do nosso
         estado.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Mobile: lista vertical com recolhimento */}
+      <div className="md:hidden flex flex-col gap-4">
+        {visibleOnMobile.map((article, index) => (
+          <ArticleCard key={index} article={article} />
+        ))}
+
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="mt-2 w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl border border-red-600/40 bg-red-950/10 text-red-500 font-semibold text-sm active:scale-[0.97] transition-all"
+        >
+          {showAll ? (
+            <>
+              <ChevronUp className="w-4 h-4" />
+              Ver menos
+            </>
+          ) : (
+            <>
+              <ChevronDown className="w-4 h-4" />
+              Ver mais {remaining} reportagens
+            </>
+          )}
+        </button>
+      </div>
+
+      {/* Desktop: grid com todas */}
+      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {articles.map((article, index) => (
-          <a
-            key={index}
-            href={article.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`group flex flex-col rounded-2xl border border-border bg-card p-5 shadow-sm hover:shadow-lg hover:border-red-600/60 transition-all duration-300 ${
-              article.highlight ? "md:col-span-2 lg:col-span-1 border-red-600/40 bg-red-950/10" : ""
-            }`}
-          >
-            {/* Header */}
-            <div className="flex items-start justify-between gap-2 mb-3">
-              <div className="flex items-center gap-2">
-                <span className="inline-flex items-center gap-1 text-xs font-semibold text-red-500 bg-red-500/10 border border-red-500/20 rounded-full px-3 py-1">
-                  <Newspaper className="w-3 h-3" />
-                  {article.source}
-                </span>
-                {article.highlight && (
-                  <span className="text-xs font-bold text-yellow-500 bg-yellow-500/10 border border-yellow-500/20 rounded-full px-2 py-1">
-                    Destaque
-                  </span>
-                )}
-              </div>
-              <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-red-500 transition-colors flex-shrink-0" />
-            </div>
-
-            {/* Title */}
-            <h3 className="font-bold text-foreground text-sm leading-snug mb-3 group-hover:text-red-400 transition-colors line-clamp-3">
-              {article.title}
-            </h3>
-
-            {/* Description */}
-            <p className="text-muted-foreground text-xs leading-relaxed flex-1 line-clamp-4">
-              {article.description}
-            </p>
-
-            {/* Footer */}
-            <div className="mt-4 pt-3 border-t border-border flex items-center justify-between">
-              <span className="text-xs text-muted-foreground">{article.date}</span>
-              <span className="text-xs font-medium text-red-500 group-hover:underline">
-                Ler reportagem →
-              </span>
-            </div>
-          </a>
+          <ArticleCard key={index} article={article} />
         ))}
       </div>
     </section>
