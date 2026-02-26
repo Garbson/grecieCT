@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? "");
+export const dynamic = "force-dynamic";
 
 const plans: Record<string, { name: string; amount: number; description: string }> = {
   mensal: {
@@ -45,6 +45,8 @@ export async function POST(req: NextRequest) {
         { status: 503 }
       );
     }
+
+    const stripe = new Stripe(key);
 
     const { planId } = await req.json();
 
